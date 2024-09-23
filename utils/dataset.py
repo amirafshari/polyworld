@@ -23,7 +23,7 @@ class CrowdAI(Dataset):
         with open(self.ANNOTATIONS_PATH) as f:
             self.annotations = json.load(f)
         
-        self.images = pd.DataFrame(self.annotations['images'])[:1]
+        self.images = pd.DataFrame(self.annotations['images'])
         self.labels = pd.DataFrame(self.annotations['annotations'])
 
 
@@ -103,7 +103,6 @@ class CrowdAI(Dataset):
         
         # Permute the graph
         # graph[:n] = self._shuffle_vector(graph, permutation)
-
         # graph = graph[:n]
         
         return adjacency_matrix, graph, vertices[:m], dic
