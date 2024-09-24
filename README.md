@@ -17,20 +17,21 @@ This repo tries to train the network from scratch
 
 ---
 
-You can start training the network in train.ipynb notebook
+You can start training the network in **train.ipynb** notebook
 - We can load the pre-trained weights for the backbone and the vertex detection network from here (https://github.com/zorzi-s/PolyWorldPretrainedNetwork) and freeze them for training to only train the Matching Network
 
 ## Architecture
-![](docs/architecture.png)
+<img src="docs/arch.png" alt="Architecture" style="width: 100%;">
 
 
 ## Main Components
 - Backbone CNN (Pre-trained)
 - Vertex Detection (1x1 Conv) (Pre-trained)
-![](docs/vertex-detection.png)
+<img src="docs/vertex-detection.png" alt="Vertex Detection" style="width: 100%;">
 - NMS (Selects top 256 points) (Not Trainable)
 - Optimal Matching (Attentional GNN) (Our main challenge for training)
-![](docs/matching.png)
+<img src="docs/matching.png" alt="Matching" style="width: 100%;">
+- Polygon Reconstruction (Not Trainable) (Using predicted adjacency matrix and top 256 points) (Our main challenge for training)
 
 ## Contributions
 - Applied random permutations on groundtruth permutation matrix (line 31-32-98-105-106 in dataset.py)
