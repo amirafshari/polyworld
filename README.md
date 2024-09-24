@@ -28,9 +28,11 @@ You can start training the network in **train.ipynb** notebook
 - Backbone CNN (Pre-trained)
 - Vertex Detection (1x1 Conv) (Pre-trained)
 <img src="docs/vertex-detection.png" alt="Vertex Detection" style="width: 100%;">
+
 - NMS (Selects top 256 points) (Not Trainable)
 - Optimal Matching (Attentional GNN) (Our main challenge for training)
 <img src="docs/matching.png" alt="Matching" style="width: 100%;">
+
 - Polygon Reconstruction (Not Trainable) (Using predicted adjacency matrix and top 256 points) (Our main challenge for training)
 
 ## Contributions
